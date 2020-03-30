@@ -154,9 +154,6 @@ INSERT INTO Employee VALUES('116','Mr.','Smith','Jon','A','11/8/1965','12/10/198
 
 -- HOW CAN YOU SEE THIS VISUALLY?
 
--- 0) Review Question! Show all Product number, description, QOH, and Vendor Name
--- How can we put this in a view?
-
 -- === SQL FUNCTIONS
 -- DATE/TIME FUNCTIONS
 
