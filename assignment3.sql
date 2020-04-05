@@ -16,12 +16,11 @@ USE Assignment3;
 -- (4) Modify the create statements below so that Book, Author, and Writes are assigned to this schema 
 -- (1 point)
 
-
 CREATE TABLE Author (
 Id NUMERIC(7,0) PRIMARY KEY,
 First VARCHAR(30) NOT NULL,
 Last VARCHAR(30) NOT NULL,
-DOB NUMERIC(4)
+DOB date
 );
 
 CREATE TABLE Patron (
@@ -59,21 +58,21 @@ CONSTRAINT WRITES_BOOK_AU_PK PRIMARY KEY (BookNum, AuthorId)
 -- You need to add the schema names.
 
 --AUTHOR rows
-INSERT INTO AUTHOR VALUES (185, 'Benson', 'Reeves', 1990);
-INSERT INTO AUTHOR VALUES (218, 'Rachel', 'Beatney', 1983);
+INSERT INTO AUTHOR VALUES (185, 'Benson', 'Reeves', '1/1/1990');
+INSERT INTO AUTHOR VALUES (218, 'Rachel', 'Beatney', '2/2/1983');
 INSERT INTO AUTHOR VALUES (229, 'Carmine', 'Salvadore', NULL);
-INSERT INTO AUTHOR VALUES (251, 'Hugo', 'Bruer', 1972);
+INSERT INTO AUTHOR VALUES (251, 'Hugo', 'Bruer', '3/3/1972');
 INSERT INTO AUTHOR VALUES (262, 'Xia', 'Chiang', NULL);
-INSERT INTO AUTHOR VALUES (273, 'Reba', 'Durante', 1969);
-INSERT INTO AUTHOR VALUES (284, 'Trina', 'Tankersly', 1961);
-INSERT INTO AUTHOR VALUES (383, 'Neal', 'Walsh', 1980);
-INSERT INTO AUTHOR VALUES (394, 'Robert', 'Lake', 1982);
-INSERT INTO AUTHOR VALUES (438, 'Perry', 'Pearson', 1986);
-INSERT INTO AUTHOR VALUES (460, 'Connie', 'Paulsen', 1983);
+INSERT INTO AUTHOR VALUES (273, 'Reba', 'Durante', '4/4/1969');
+INSERT INTO AUTHOR VALUES (284, 'Trina', 'Tankersly', '5/5/1961');
+INSERT INTO AUTHOR VALUES (383, 'Neal', 'Walsh', '6/6/1980');
+INSERT INTO AUTHOR VALUES (394, 'Robert', 'Lake', '7/7/1982');
+INSERT INTO AUTHOR VALUES (438, 'Perry', 'Pearson', '8/8/1986');
+INSERT INTO AUTHOR VALUES (460, 'Connie', 'Paulsen', '9/9/1983');
 INSERT INTO AUTHOR VALUES (559, 'Rachel', 'McGill', NULL);
-INSERT INTO AUTHOR VALUES (581, 'Manish', 'Aggerwal', 1984);
-INSERT INTO AUTHOR VALUES (592, 'Lawrence', 'Sheel', 1976);
-INSERT INTO AUTHOR VALUES (603, 'Julia', 'Palca', 1988);
+INSERT INTO AUTHOR VALUES (581, 'Manish', 'Aggerwal', '10/10/1984');
+INSERT INTO AUTHOR VALUES (592, 'Lawrence', 'Sheel', '12/12/1976');
+INSERT INTO AUTHOR VALUES (603, 'Julia', 'Palca', '1/1/1988');
 
 --PATRON rows
 
@@ -252,33 +251,32 @@ INSERT INTO WRITES VALUES (5253, 185);
 INSERT INTO WRITES VALUES (5254, 559);
 
 -- (5) Write a query that shows the title of each book checked out by patrons with the last name of "Smith"
--- and their check out date. Query should return patron last, first, book title, and check out date. (2 points)
+-- and their check out date. Query should return patron last, first, book title, and check out date. (2 points) Hint: joins
 
 -- (6) Write a query that shows the only the titles of books that have never been checked out. 
--- Sort by titles alphabetically.  (2 points)
+-- Sort by titles alphabetically.  (2 points) Hint: special kind of join or can use subquery
 
--- (7) Write a query that determines the patron(s) with the most checkouts. 
--- Provide the patron last name and the number of checkouts in the results. (2 points)
+-- (7) Write a query that determines the average age of all authors. (2 points)
 
--- (8) Write a query that determines the average age of all patrons. (2 points)
-
--- (9) Write a query shows the average number of days that a book is returned late. 
+-- (8) Write a query shows the average number of days that a book is returned late. 
 -- Only include transcations where the book was returned late. The query should only 
 -- return one value: a number rounded to the nearest whole number.   (2 points)
 
--- (10)  Writes a query that shows all checkouts that are returned late including the Patron Id, 
--- CheckInDate, and DueDate.  It should also list how many dates the book is returned late when 
--- compared to the average late check in. Positive values should show values greater than the average 
--- while negative values should reveal values less than the average.  
--- Hint: this is a good opportunity to use a subquery. (2 points)
+-- (9)  Writes a query that shows all checkouts that are returned late including the Patron Id, 
+-- CheckInDate, DueDate, and number of dates late for patrons who return books late.  (2 points)
 
--- (11) Write a query to display the book number, title, and cost of books that have the 
+-- (10) Write a query to display the book number, title, and cost of books that have the 
 -- lowest cost of any books in the system.  Sort the results by book number. (2 points)
 
--- (12) Write a query to display the author first and last name for all authors who have never 
+-- (11) Write a query to display the author first and last name for all authors who have never 
 -- written a book with the subject Programming.  Sort the results by author last name. 
 -- Becareful with this one and besure to check your work (2 points)
 
--- (13) Write a query that creates patron usernames by doing the following: taking first 3 letters of last name, followed by first letter of first name, and the first 3 letters of their role, and appends their patrol id. (2 points)
+-- (12) Write a query that creates patron usernames by doing the following: taking first 3 letters of last name, 
+-- followed by first letter of first name, and the first 3 letters of their type, and appends their patron id. (2 points)
+-- Tips: I pretty much do this one in the videos when looking at string functions.
 
-
+-- (13) Write a query that determines the patron(s) with the most checkouts. 
+-- Provide the patron ID and the number of checkouts in the results. (2 points)
+-- Hint: this one is tricky... this about it in two parts (subquery)... find the highest number (1 query) 
+-- and then use that to filter results (another query)
