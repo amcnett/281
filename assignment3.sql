@@ -257,26 +257,32 @@ INSERT INTO WRITES VALUES (5254, 559);
 -- Sort by titles alphabetically.  (2 points) Hint: special kind of join or can use subquery
 
 -- (7) Write a query that determines the average age of all authors. (2 points)
+-- Note that you'll need to get the difference of today's date and the author's dob in terms of years. 
+-- This should return a whole number (no decimal places).
 
--- (8) Write a query shows the average number of days that a book is returned late. 
+-- (8) Write a query that shows all checkouts that are returned late including the Patron Id, 
+-- CheckInDate, DueDate, and number of days late for patrons who return books late only.  (2 points)
+-- Don't show checkouts submitted early or on time.
+
+-- (9) Write a query that shows the average number of days that a book is returned late. 
 -- Only include transcations where the book was returned late. The query should only 
--- return one value: a number rounded to the nearest whole number.   (2 points)
-
--- (9)  Writes a query that shows all checkouts that are returned late including the Patron Id, 
--- CheckInDate, DueDate, and number of dates late for patrons who return books late.  (2 points)
+-- return one value: a whole number.   (2 points)
 
 -- (10) Write a query to display the book number, title, and cost of books that have the 
 -- lowest cost of any books in the system.  Sort the results by book number. (2 points)
+-- There could be ties... maybe a subquery here. 
 
 -- (11) Write a query to display the author first and last name for all authors who have never 
 -- written a book with the subject Programming.  Sort the results by author last name. 
--- Becareful with this one and besure to check your work (2 points)
+-- Becareful with this one and besure to check your work. You might want to use a subquery to determine who
+-- has written books about programming and then find authors not in this list. (2 points)
 
 -- (12) Write a query that creates patron usernames by doing the following: taking first 3 letters of last name, 
 -- followed by first letter of first name, and the first 3 letters of their type, and appends their patron id. (2 points)
--- Tips: I pretty much do this one in the videos when looking at string functions.
+-- Tip: I pretty much do this one in the video when looking at string functions.
 
 -- (13) Write a query that determines the patron(s) with the most checkouts. 
 -- Provide the patron ID and the number of checkouts in the results. (2 points)
--- Hint: this one is tricky... this about it in two parts (subquery)... find the highest number (1 query) 
--- and then use that to filter results (another query)
+-- Hint: this one is tricky... this about it in two parts (subquery) Find the highest number (one query) 
+-- and then use that to filter results (another query).
+-- There is more than one result (there is a tie between multiple patrons).
