@@ -1,7 +1,7 @@
 -- Need to create and use a database for this
 -- Need to create a HR schema
 Go;
-CREATE SCHEMA HR;
+CREATE SCHEMA HR; -- run the schema lines one at a time if they give you trouble
 Go;
 -- Need to create a Registrar schema
 CREATE SCHEMA Registrar;
