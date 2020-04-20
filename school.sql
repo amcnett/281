@@ -46,7 +46,7 @@ ALTER TABLE Registrar.Student
 ADD CONSTRAINT CkStudent_GPA
 CHECK (GPA BETWEEN 0 AND 4);
 
-INSERT INTO Registrar.STUDENT VALUES('Miller','Bob','U','1998-2-23', 5.2);
+--INSERT INTO Registrar.STUDENT VALUES('Miller','Bob','U','1998-2-23', 5.2); -- GPA is not valid (example)
 
 ALTER TABLE Registrar.Student
 ADD EmployeeId int CONSTRAINT FkStudent_EmployeeId
