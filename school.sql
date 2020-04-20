@@ -1,6 +1,11 @@
 -- Need to create and use a database for this
 -- Need to create a HR schema
+Go;
+CREATE SCHEMA HR;
+Go;
 -- Need to create a Registrar schema
+CREATE SCHEMA Registrar;
+Go;
 
 CREATE TABLE Registrar.STUDENT(
 StudentID int IDENTITY(1,1) NOT NULL,
